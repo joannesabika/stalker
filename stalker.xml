@@ -31,7 +31,7 @@
                 <field name="OP">EQ</field>
                 <value name="A">
                   <block type="sensor_object" id="89">
-                    <field name="OBJECT">LEFTFRONT</field>
+                    <field name="OBJECT">RIGHTFRONT</field>
                   </block>
                 </value>
                 <value name="B">
