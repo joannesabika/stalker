@@ -8,6 +8,7 @@
     </value>
     <statement name="DO">
       <block type="controls_if" id="41" inline="false">
+        <mutation elseif="2"></mutation>
         <value name="IF0">
           <block type="logic_operation" id="48" inline="true">
             <field name="OP">LAND</field>
@@ -51,6 +52,42 @@
               </block>
             </next>
           </block>
+        </statement>
+        <value name="IF1">
+          <block type="logic_compare" id="198" inline="true">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="sensor_object" id="199">
+                <field name="OBJECT">LEFTFRONT</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="sensor_object" id="200">
+                <field name="OBJECT">RIGHTFRONT</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="movement_left" id="214"></block>
+        </statement>
+        <value name="IF2">
+          <block type="logic_compare" id="202" inline="true">
+            <field name="OP">GT</field>
+            <value name="A">
+              <block type="sensor_object" id="203">
+                <field name="OBJECT">LEFTFRONT</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="sensor_object" id="204">
+                <field name="OBJECT">RIGHTFRONT</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO2">
+          <block type="movement_left" id="215"></block>
         </statement>
         <next>
           <block type="robot_delay" id="169" inline="true">
