@@ -8,7 +8,7 @@
     </value>
     <statement name="DO">
       <block type="controls_if" id="41" inline="false">
-        <mutation elseif="2"></mutation>
+        <mutation elseif="2" else="1"></mutation>
         <value name="IF0">
           <block type="logic_operation" id="48" inline="true">
             <field name="OP">LAND</field>
@@ -69,7 +69,18 @@
           </block>
         </value>
         <statement name="DO1">
-          <block type="movement_left" id="214"></block>
+          <block type="movement_left" id="214">
+            <next>
+              <block type="led_select" id="250" inline="true">
+                <field name="ACTION">FLASH</field>
+                <value name="LED">
+                  <block type="math_number" id="257">
+                    <field name="NUM">4</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
         </statement>
         <value name="IF2">
           <block type="logic_compare" id="202" inline="true">
@@ -87,7 +98,42 @@
           </block>
         </value>
         <statement name="DO2">
-          <block type="movement_left" id="215"></block>
+          <block type="movement_right" id="225">
+            <next>
+              <block type="led_select" id="258" inline="true">
+                <field name="ACTION">FLASH</field>
+                <value name="LED">
+                  <block type="math_number" id="259">
+                    <field name="NUM">2</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="movement_forward" id="241">
+            <next>
+              <block type="led_select" id="260" inline="true">
+                <field name="ACTION">FLASH</field>
+                <value name="LED">
+                  <block type="math_number" id="261">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="led_select" id="262" inline="true">
+                    <field name="ACTION">FLASH</field>
+                    <value name="LED">
+                      <block type="math_number" id="263">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
         </statement>
         <next>
           <block type="robot_delay" id="169" inline="true">
