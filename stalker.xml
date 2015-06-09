@@ -3,7 +3,7 @@
     <field name="MODE">UNTIL</field>
     <value name="NUMBER">
       <block type="sensor_button" id="21">
-        <field name="OBJECT">UP</field>
+        <field name="OBJECT">ENTER</field>
       </block>
     </value>
     <statement name="DO">
@@ -57,13 +57,28 @@
           <block type="logic_compare" id="198" inline="true">
             <field name="OP">LT</field>
             <value name="A">
-              <block type="sensor_object" id="199">
-                <field name="OBJECT">LEFTFRONT</field>
+              <block type="math_single" id="279" inline="true">
+                <field name="OP">ABS</field>
+                <value name="NUM">
+                  <block type="math_arithmetic" id="286" inline="true">
+                    <field name="OP">MINUS</field>
+                    <value name="A">
+                      <block type="sensor_object" id="199">
+                        <field name="OBJECT">LEFTFRONT</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="sensor_object" id="200">
+                        <field name="OBJECT">RIGHTFRONT</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
               </block>
             </value>
             <value name="B">
-              <block type="sensor_object" id="200">
-                <field name="OBJECT">RIGHTFRONT</field>
+              <block type="math_number" id="299">
+                <field name="NUM">10</field>
               </block>
             </value>
           </block>
